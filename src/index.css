@@ -1,0 +1,122 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Tailwind CSS v3 directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables for easy reference */
+:root {
+  --bone-white: #F2F0E9;
+  --deep-charcoal: #1A1A1A;
+  --matte-asphalt: #2B2B2B;
+  --cortina-yellow: #DCB977;
+  --accent-color: var(--cortina-yellow);
+}
+
+/* Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  @apply bg-bone text-charcoal font-body;
+  overflow-x: hidden;
+  position: relative;
+
+  /* Mobile optimizations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Heading Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading;
+  letter-spacing: 0.02em;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  /* Prevent text size adjustment on orientation change (mobile) */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Mobile-specific optimizations */
+@media (hover: none) and (pointer: coarse) {
+
+  /* Touch device detected - enable momentum scrolling on iOS */
+  html,
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Remove tap highlight on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Ensure touch targets are large enough */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* GPU acceleration for animations */
+@media (prefers-reduced-motion: no-preference) {
+  [style*="transform"] {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--cortina-yellow);
+  color: var(--deep-charcoal);
+}
