@@ -62,7 +62,7 @@ export function PeopleSection() {
           once: true
         }} className="group">
           <div className="aspect-[3/4] rounded-lg overflow-hidden mb-6 shadow-2xl">
-            <img src={person.imageUrl} alt={person.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+            <img src={person.imageUrl} alt={person.name} loading="lazy" decoding="async" width={600} height={800} sizes="(max-width: 768px) 100vw, 33vw" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
           </div>
 
           <div className="space-y-4">

@@ -40,9 +40,6 @@ export function GallerySection() {
               medium: 'w-full md:w-3/5',
               small: 'w-full md:w-2/5'
             };
-            // Load first 6 images eagerly, rest lazy to prevent scroll lag
-            const loadingStrategy = index < 6 ? 'eager' : 'lazy';
-
             return (
               <motion.div
                 key={index}
@@ -59,7 +56,11 @@ export function GallerySection() {
                   <img
                     src={image.url}
                     alt={image.alt}
-                    loading={loadingStrategy}
+                    loading="lazy"
+                    decoding="async"
+                    width={1600}
+                    height={1200}
+                    sizes="(max-width: 768px) 100vw, 80vw"
                     className="w-full h-full object-cover"
                   />
                 </div>

@@ -103,6 +103,9 @@ function TimelineEntry({
           alt={slide.title}
           loading="lazy"
           decoding="async"
+          width={800}
+          height={600}
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="w-full h-full object-cover grayscale"
         />
       </div>

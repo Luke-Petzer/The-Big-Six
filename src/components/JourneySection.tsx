@@ -67,7 +67,7 @@ export function JourneySection() {
           once: true
         }} className="space-y-8">
           <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80" alt="Barn find" className="w-full h-full object-cover grayscale" />
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80" alt="Barn find" loading="lazy" decoding="async" width={800} height={1067} sizes="(max-width: 768px) 100vw, 50vw" className="w-full h-full object-cover grayscale" />
           </div>
           <p className="text-sm md:text-base italic text-[#1A1A1A]/60 text-center">
             "As found" condition, 1998. The beginning of a 25-year journey.

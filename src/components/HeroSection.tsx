@@ -61,6 +61,9 @@ export function HeroSection() {
         alt="Yellow Ford Cortina"
         fetchPriority="high"
         decoding="async"
+        width={1600}
+        height={900}
+        sizes="(max-width: 768px) 80vw, 60vw"
         className="w-full h-auto drop-shadow-2xl"
       />
     </motion.div>

@@ -4,11 +4,13 @@ import { SpecsSection } from './components/SpecsSection';
 import { GallerySection } from './components/GallerySection';
 import { FooterSection } from './components/FooterSection';
 export function App() {
-  return <div className="w-full min-h-screen">
-    <HeroSection />
-    <TimelineSection />
-    <SpecsSection />
-    <GallerySection />
-    <FooterSection />
-  </div>
+  return (
+    <main className="w-full min-h-screen">
+      <HeroSection />
+      <TimelineSection />
+      <SpecsSection />
+      <GallerySection />
+      <FooterSection />
+    </main>
+  );
 }
