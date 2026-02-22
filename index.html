@@ -12,7 +12,20 @@
 </head>
 
 <body style="background-color:#F2F0E9;margin:0">
-  <div id="root"></div>
+  <div id="root">
+    <!--
+      Pre-hydration ghost: the car renders instantly from raw HTML.
+      React replaces div#root contents on mount — no flash, no jump.
+    -->
+    <div
+      style="position:fixed;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background-color:#F2F0E9;z-index:0;pointer-events:none"
+      aria-hidden="true">
+      <img src="/hero-image-400.webp"
+        srcset="/hero-image-400.webp 400w, /hero-image-800.webp 800w, /hero-image.webp 800w"
+        sizes="(max-width:768px) 80vw, 60vw" alt="" fetchpriority="high" width="800" height="600"
+        style="position:absolute;top:55%;left:50%;transform:translate(-50%,-0%);width:80vw;max-width:56rem;height:auto;filter:drop-shadow(0 25px 25px rgba(0,0,0,0.15))" />
+    </div>
+  </div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 

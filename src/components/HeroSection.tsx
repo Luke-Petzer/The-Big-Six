@@ -26,29 +26,20 @@ export function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return <section ref={sectionRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-[#F2F0E9]">
-    {/* Vertical stripes that stop at title level - matching reference design */}
-    <div className="absolute inset-0 flex justify-center pointer-events-none z-0">
+    {/* Vertical stripes — mask-image fades them to transparent before hitting text */}
+    <div className="absolute inset-0 flex justify-center pointer-events-none z-0"
+      style={{ maskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 85%)', WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 85%)' }}
+    >
       <div className="relative w-full max-w-7xl h-full">
-        <motion.div style={{
-          opacity
-        }} className="absolute left-1/2 -translate-x-[55px] w-[40px] h-[60%] top-0 bg-[#2B2B2B]" />
-        <motion.div style={{
-          opacity
-        }} className="absolute left-1/2 translate-x-[15px] w-[40px] h-[60%] top-0 bg-[#2B2B2B]" />
+        <motion.div style={{ opacity }} className="absolute left-1/2 -translate-x-[55px] w-[40px] h-[75%] top-0 bg-[#2B2B2B]" />
+        <motion.div style={{ opacity }} className="absolute left-1/2 translate-x-[15px] w-[40px] h-[75%] top-0 bg-[#2B2B2B]" />
       </div>
     </div>
 
-    <motion.div style={{
-      y: textY,
-      opacity
-    }} className="relative z-10 text-center px-8">
-      {/* Background mask for title to prevent stripes showing through */}
-      <div className="relative inline-block">
-        <div className="absolute inset-0 bg-[#F2F0E9] -m-4 -z-10" />
-        <h1 className="text-[20vw] md:text-[25vw] leading-[0.85] font-normal tracking-tight text-[#1A1A1A] select-none">
-          THE BIG SIX
-        </h1>
-      </div>
+    <motion.div style={{ y: textY, opacity }} className="relative z-10 text-center px-8">
+      <h1 className="text-[20vw] md:text-[25vw] leading-[0.85] font-normal tracking-tight text-[#1A1A1A] select-none">
+        THE BIG SIX
+      </h1>
     </motion.div>
 
     {/* ── plain div: img renders immediately, zero Framer dependency ── */}
@@ -75,14 +66,8 @@ export function HeroSection() {
       aria-hidden="true"
     />
 
-    <motion.p style={{
-      opacity
-    }} className="absolute bottom-24 left-1/2 -translate-x-1/2 z-30 text-lg md:text-xl tracking-[0.3em] uppercase text-[#1A1A1A] font-light">
-      {/* Background mask for subtitle */}
-      <span className="relative inline-block">
-        <span className="absolute inset-0 bg-[#F2F0E9] -mx-8 -my-2 -z-10" />
-        <span className="relative">A Restoration Story</span>
-      </span>
+    <motion.p style={{ opacity }} className="absolute bottom-24 left-1/2 -translate-x-1/2 z-30 text-lg md:text-xl tracking-[0.3em] uppercase text-[#1A1A1A] font-light">
+      A Restoration Story
     </motion.p>
   </section>;
 }

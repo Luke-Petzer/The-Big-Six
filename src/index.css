@@ -86,11 +86,14 @@ body {
   @apply bg-bone text-charcoal font-body;
   overflow-x: hidden;
   position: relative;
+  font-weight: 400;
 
-  /* Mobile optimizations */
+  /* Font rendering — prevents faux-bold glitch on mobile high-DPI */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  /* Prevent browser from synthesising bold/italic when weight isn't loaded */
+  font-synthesis: none;
 }
 
 /* Subtle grain texture overlay */
@@ -116,6 +119,9 @@ h5,
 h6 {
   @apply font-heading;
   letter-spacing: 0.02em;
+  /* Lock Bebas Neue to its only available weight — prevents faux-bolding */
+  font-weight: 400;
+  font-synthesis: none;
 }
 
 /* Smooth scrolling */
