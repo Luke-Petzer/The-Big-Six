@@ -18,8 +18,10 @@ export default defineConfig({
     minify: 'esbuild',
     // Chunk size warnings
     chunkSizeWarningLimit: 500,
-    // Target modern browsers for better optimization
-    target: 'es2015'
+    // Target modern browsers with native ESM for smaller bundles
+    target: 'es2020',
+    // Prevent tiny assets (fonts etc.) being inlined into the JS bundle
+    assetsInlineLimit: 0
   },
   // Optimize dependencies for faster mobile loads
   optimizeDeps: {

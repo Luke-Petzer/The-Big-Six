@@ -5,25 +5,29 @@ interface TimelineSlide {
   title: string;
   description: string;
   imageUrl?: string;
+  srcSet?: string;
   side: 'left' | 'right';
 }
 const slides: TimelineSlide[] = [{
   year: '2013',
   title: 'The Promise',
-  description: "It started on an Easter weekend camping trip in Onrus. Tucked away in an uncle's garage sat the Cortina. It wasn't for sale, but a promise was made: 'If you ever decide to sell, I'd love to buy it.' Life moved on, but the memory of the car remained.",
+  description: "It started on an Easter weekend camping trip in Onrus. Tucked away in an uncle's garage sat the Cortina. It wasn't for sale, but a promise was made: 'If you ever decide to sell, I\'d love to buy it.' Life moved on, but the memory of the car remained.",
   imageUrl: '/the-promise.webp',
+  srcSet: '/the-promise-400.webp 400w, /the-promise-800.webp 800w, /the-promise.webp 1200w',
   side: 'left'
 }, {
   year: '2019',
   title: 'The Call',
   description: "Seven years of silence. The uncle had passed away. Then, a call from his daughter: 'Are you still interested?' After a brief hesitation from the family, the decision was finally made six months later. The car was ready to leave its home of many years.",
   imageUrl: '/the-call.webp',
+  srcSet: '/the-call-400.webp 400w, /the-call-800.webp 800w, /the-call.webp 800w',
   side: 'right'
 }, {
   year: '',
   title: 'The Awakening',
   description: "It hadn't run in five years. Aunt Rosenstrauch warned it wouldn't start. But with a new battery, fresh spark plugs, and fuel in the carburetor, the engine roared to life. It smoked a bit—worn valve stem seals—but the soul of the machine was intact.",
   imageUrl: '/hero-image.webp',
+  srcSet: '/hero-image-400.webp 400w, /hero-image-800.webp 800w, /hero-image.webp 800w',
   side: 'left'
 }, {
   year: '2024',
@@ -100,6 +104,7 @@ function TimelineEntry({
       <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
         <img
           src={slide.imageUrl}
+          srcSet={slide.srcSet}
           alt={slide.title}
           loading="lazy"
           decoding="async"

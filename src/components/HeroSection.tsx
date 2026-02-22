@@ -51,22 +51,29 @@ export function HeroSection() {
       </div>
     </motion.div>
 
-    <motion.div style={{
-      y: carY,
-      opacity,
-      x: '-50%'
-    }} className="absolute top-[55%] left-1/2 z-20 w-[80vw] md:w-[60vw] max-w-4xl will-change-transform">
+    {/* ── plain div: img renders immediately, zero Framer dependency ── */}
+    <div
+      className="absolute top-[55%] left-1/2 z-20 w-[80vw] md:w-[60vw] max-w-4xl"
+      style={{ transform: 'translateX(-50%)' }}
+    >
       <img
         src="/hero-image.webp"
+        srcSet="/hero-image-400.webp 400w, /hero-image-800.webp 800w, /hero-image.webp 800w"
         alt="Yellow Ford Cortina"
         fetchPriority="high"
         decoding="async"
-        width={1600}
-        height={900}
+        width={800}
+        height={600}
         sizes="(max-width: 768px) 80vw, 60vw"
         className="w-full h-auto drop-shadow-2xl"
       />
-    </motion.div>
+    </div>
+    {/* ── motion.div: purely for parallax y-offset, contains nothing visible ── */}
+    <motion.div
+      style={{ y: carY, x: '-50%' }}
+      className="absolute top-[55%] left-1/2 z-20 w-[80vw] md:w-[60vw] max-w-4xl pointer-events-none"
+      aria-hidden="true"
+    />
 
     <motion.p style={{
       opacity
