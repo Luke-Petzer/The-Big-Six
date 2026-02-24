@@ -36,7 +36,8 @@ export function HeroSection() {
       </div>
     </div>
 
-    <motion.div style={{ y: textY, opacity }} className="relative z-10 text-center px-8">
+    <motion.div style={{ y: textY, opacity }} className="relative z-10 text-center px-4 md:px-8">
+      <div className="absolute inset-0 -z-10 bg-[#F2F0E9] blur-3xl scale-125 md:hidden opacity-80" />
       <h1 className="text-[20vw] md:text-[25vw] leading-[0.85] font-normal tracking-tight text-[#1A1A1A] select-none">
         THE BIG SIX
       </h1>
@@ -66,7 +67,7 @@ export function HeroSection() {
       aria-hidden="true"
     />
 
-    <motion.p style={{ opacity }} className="absolute bottom-24 left-1/2 -translate-x-1/2 z-30 text-lg md:text-xl tracking-[0.3em] uppercase text-[#1A1A1A] font-light">
+    <motion.p style={{ opacity }} className="absolute bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 z-30 text-sm md:text-lg tracking-[0.5em] md:tracking-[0.8em] uppercase text-[#1A1A1A] font-medium opacity-80">
       A Restoration Story
     </motion.p>
   </section>;

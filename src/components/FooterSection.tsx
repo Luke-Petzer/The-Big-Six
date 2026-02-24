@@ -40,9 +40,8 @@ export function FooterSection() {
     }} className="text-center z-10 space-y-8 md:space-y-12">
       {/* Heading with background mask */}
       <div className="relative inline-block">
-        <h3 className="text-4xl md:text-7xl font-normal text-[#1A1A1A] tracking-wide bg-[#F2F0E9] px-4 md:px-6 py-3 relative z-10 backdrop-blur-sm" style={{
-          boxShadow: '0 0 30px 30px rgba(242, 240, 233, 0.9)'
-        }}>
+        <h3 className="text-4xl md:text-7xl font-normal text-[#1A1A1A] tracking-wide relative z-10">
+          <div className="absolute inset-0 -z-10 bg-[#F2F0E9] blur-3xl scale-150 opacity-90" />
           Built, not bought.
         </h3>
       </div>
@@ -57,9 +56,8 @@ export function FooterSection() {
 
       {/* Contact info with background mask */}
       <div className="pt-8 md:pt-12 space-y-2 relative inline-block">
-        <div className="bg-[#F2F0E9] px-4 md:px-6 py-3 relative z-10 backdrop-blur-sm" style={{
-          boxShadow: '0 0 30px 30px rgba(242, 240, 233, 0.9)'
-        }}>
+        <div className="relative z-10">
+          <div className="absolute inset-0 -z-10 bg-[#F2F0E9] blur-3xl scale-125 opacity-90" />
           <p className="text-base md:text-lg text-[#1A1A1A]/70">
             JT Nesenberend
           </p>

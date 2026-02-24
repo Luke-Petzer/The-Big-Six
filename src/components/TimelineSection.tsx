@@ -133,9 +133,8 @@ function TimelineEntry({
         }} viewport={{
           once: true,
           margin: '-100px'
-        }} className="text-5xl md:text-8xl font-normal text-[#1A1A1A] bg-[#F2F0E9] px-4 py-2 relative z-10 backdrop-blur-sm" style={{
-          boxShadow: '0 0 20px 20px rgba(242, 240, 233, 0.9)'
-        }}>
+        }} className="text-5xl md:text-8xl font-normal text-[#1A1A1A] relative z-10">
+          <div className="absolute inset-0 -z-10 bg-[#F2F0E9] blur-2xl scale-150 opacity-90" />
           {slide.year}
         </motion.p>
       </div>}
@@ -154,9 +153,8 @@ function TimelineEntry({
         }} viewport={{
           once: true,
           margin: '-100px'
-        }} className="text-4xl md:text-7xl font-normal text-[#1A1A1A] bg-[#F2F0E9] px-4 py-2 relative z-10 backdrop-blur-sm" style={{
-          boxShadow: '0 0 20px 20px rgba(242, 240, 233, 0.9)'
-        }}>
+        }} className="text-4xl md:text-7xl font-normal text-[#1A1A1A] relative z-10">
+          <div className="absolute inset-0 -z-10 bg-[#F2F0E9] blur-3xl scale-150 opacity-90" />
           {slide.title}
         </motion.h2>
       </div>
@@ -175,9 +173,8 @@ function TimelineEntry({
         }} viewport={{
           once: true,
           margin: '-100px'
-        }} className="text-lg md:text-2xl leading-relaxed text-[#1A1A1A]/80 bg-[#F2F0E9] px-4 py-2 relative z-10 backdrop-blur-sm" style={{
-          boxShadow: '0 0 20px 20px rgba(242, 240, 233, 0.9)'
-        }}>
+        }} className="text-lg md:text-2xl leading-relaxed text-[#1A1A1A]/80 relative z-10">
+          <div className="absolute inset-0 -z-10 bg-[#F2F0E9] blur-3xl scale-125 opacity-90" />
           {slide.description}
         </motion.p>
       </div>
