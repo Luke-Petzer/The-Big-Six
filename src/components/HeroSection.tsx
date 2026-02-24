@@ -37,7 +37,7 @@ export function HeroSection() {
     </div>
 
     <motion.div style={{ y: textY, opacity }} className="relative z-10 text-center px-4 md:px-8">
-      <div className="absolute inset-0 -z-10 bg-[#F2F0E9] blur-3xl scale-125 md:hidden opacity-80" />
+      <div className="absolute inset-0 -z-10 bg-[#F2F0E9] blur-3xl scale-125 opacity-80" />
       <h1 className="text-[20vw] md:text-[25vw] leading-[0.85] font-normal tracking-tight text-[#1A1A1A] select-none">
         THE BIG SIX
       </h1>
